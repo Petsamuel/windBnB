@@ -1,0 +1,28 @@
+nav {
+    margin: 3em 4em;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#000
+}
+
+
+.input-group{
+      width: 297px;
+    height: 55px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    display:flex;
+   place-content: space-evenly;
+    align-items: center;
+   
+}
+.input-group input{
+     height: 55px;
+     background: #fff;
+     border-top:none;
+     border-bottom:none;
+     outline:none;
+     color:#000
+}
