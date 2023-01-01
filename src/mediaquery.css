@@ -1,0 +1,16 @@
+/* mobile  */
+@media screen and (max-width:46.5em) {
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap:2em
+        }
+}
+/* tablets */
+@media screen and  (min-width:46.5em) and (max-width:62em) {
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap:2em
+        }
+}

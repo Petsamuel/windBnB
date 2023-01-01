@@ -10,7 +10,7 @@ function Main() {
             <div className="heading">
               <div className="heading-wrapper">
               <div className='title-text'>Stays in Finland</div>
-              <div>
+              <div className="stays-counts">
                 12+stays
               </div>
               </div>

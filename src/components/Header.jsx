@@ -2,6 +2,8 @@ import React,{useState, useEffect} from "react";
 import logo from "../assets/logo.png";
 import "../assets/styles/header.css";
 import locations from "../stays.json"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 function Header() {
@@ -29,7 +31,7 @@ function Header() {
             <div className="input-group">
              <div className="search-city">Helsinki</div>
              <input  className="search-input" type="text"/>
-             <div  className="search-icon"><i></i></div>
+             <div  className="search-icon"><i><FontAwesomeIcon icon={faSearch} /></i></div>
             </div>
           </div>
         
