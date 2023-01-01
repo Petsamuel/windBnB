@@ -1,7 +1,7 @@
 import React from "react";
 import stays from "../stays.json";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Card() {
   return (
@@ -14,8 +14,19 @@ function Card() {
             </div>
             <div className="card-wrapper">
               <div className="card-body-section">
-                <div className="card-type">{index.type}</div>
-                <div className="card-rating"><i> <FontAwesomeIcon icon={faStar} /></i>{index.rating}</div>
+                <div className="card-type-section">
+                  {index.type === "Entire apartment"
+                    ?<div className="card-type-wrapper"><span className="host">SUPER HOST</span>
+                    <div className="card-type">{index.type} <span> {index.beds}.Beds</span></div> </div> 
+                    : <div className="card-type">{index.type}</div>}
+                </div>
+                <div className="card-rating">
+                  <i>
+                    {" "}
+                    <FontAwesomeIcon icon={faStar} />
+                  </i>
+                  {index.rating}
+                </div>
               </div>
               <div className="card-info">{index.title}</div>
             </div>
