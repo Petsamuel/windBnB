@@ -1,22 +1,23 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import "../assets/styles/header.css";
-import locations from "../stays.json"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
+import locations from "../stays.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
-  const [location, setLocation] = useState()
-  useEffect(()=>{
-  locations.map((index, val)=>{
-    setLocation(index.city)
-    // console.log(index.city)
-  })
+  const [location, setLocation] = useState([]);
+  const [active, setactive]=useState(true)
+  // const droplocation = []
+  useEffect(() => {
+    locations.map((index) => {
+      setLocation(index.city +"," + index.country);
+    });
    
-  })
-  
-  
+    console.log(location)
+
+  }, [active]);
+
   return (
     <React.Fragment>
       <nav>
@@ -26,15 +27,24 @@ function Header() {
           </div>
         </div>
 
-        <div className="search-container">
-         
-            <div className="input-group">
-             <div className="search-city">Helsinki</div>
-             <input  className="search-input" type="text"/>
-             <div  className="search-icon"><i><FontAwesomeIcon icon={faSearch} /></i></div>
-            </div>
+        <div className={active ? "search-container input-group" : "search-container-active"}>
+          <div className="location-search">
+            <span>LOCATION</span>
+            <ul className="location-list">
+              {
+              location.map((index, val)=>{
+                <li className="location-list-item" key={val}>{index}</li>
+              })
+            }
+             
+            </ul>
           </div>
-        
+          <div className="Guest-search"></div>
+          <div className="search-button"> <i>
+          <FontAwesomeIcon icon={faSearch} />
+        </i></div>
+        </div>
+       
       </nav>
     </React.Fragment>
   );
