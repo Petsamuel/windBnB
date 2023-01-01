@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import Card from "./card";
 
 function Main() {
@@ -8,8 +8,8 @@ function Main() {
         
         <div className='main-wrapper'>
             <div className="heading">
-              <div className="heading wrapper">
-              <h1>Stays in Finland</h1>
+              <div className="heading-wrapper">
+              <div className='title-text'>Stays in Finland</div>
               <div>
                 12+stays
               </div>

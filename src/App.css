@@ -21,9 +21,33 @@
     flex-direction: column;
     gap:4em
 }
+.heading-wrapper{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    margin-bottom:2em;
+}
+.title-text{
+width: 199px;
+height: 29px;
+left: 91px;
+top: 148px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+
+color: #333333;
+}
 .card-container{
 display: grid;
 grid-template-columns: repeat(3, auto);
+gap:2em
+}
+.card-wrapper{
+    display:block;
 }
 .card-img{
 width: 395px;
@@ -35,17 +59,17 @@ border-radius: 24px;
 .card-body-section{
     display:flex;
     justify-content: space-between;
+    
 }
 .card-info{
-width: 308px;
-height: 20px;
-/* left: 94px;
-top: 533px; */
+/* width: 308px; */
+/* left: 94px;*/
+height: 20px; 
+top: 533px; 
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 20px;
-text-align: right;
 color: #333333;
 }
