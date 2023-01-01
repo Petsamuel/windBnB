@@ -1,5 +1,5 @@
 nav {
-    margin: 3em 4em;
+  
     display: flex;
     justify-content:space-between;
     align-items:center;
@@ -19,10 +19,11 @@ nav {
    
 }
 .input-group input{
-     height: 55px;
+     height: 45px;
      background: #fff;
      border-top:none;
      border-bottom:none;
      outline:none;
-     color:#000
+     color:#000;
+     padding:3px;
 }
