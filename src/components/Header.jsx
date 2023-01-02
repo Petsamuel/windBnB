@@ -7,17 +7,24 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [location, setLocation] = useState([]);
-  const [active, setactive]=useState(true)
-  // const droplocation = []
+  const [dropdownlist, setdropdownlist]= useState();
+  const [active, setactive] = useState(true);
+
+  const droplocation = [
+    "Helsinki, Finland",
+    "Turku, Finland",
+    "Vaasa, Finland",
+    "Oulu, Finland",
+  ];
   useEffect(() => {
     locations.map((index) => {
       setLocation(index.city +"," + index.country);
+
     });
-   
-    console.log(location)
-
   }, [active]);
-
+function dropdownflag(){
+  setdropdownlist("hello")
+}
   return (
     <React.Fragment>
       <nav>
@@ -27,24 +34,28 @@ function Header() {
           </div>
         </div>
 
-        <div className={active ? "search-container input-group" : "search-container-active"}>
+        <div
+          className={
+            active ? "search-container input-group" : "search-container-active"
+          }
+        >
           <div className="location-search">
-            <span>LOCATION</span>
+            <span onClick={(e)=>{dropdownflag()}}>{dropdownlist ? dropdownlist : "sdsdsd"}</span>
             <ul className="location-list">
-              {
-              location.map((index, val)=>{
-                <li className="location-list-item" key={val}>{index}</li>
-              })
-            }
+              {droplocation.map((value, key)=>{
+                 <li key={key}>{value}dfdfdf</li>
+              })}
              
             </ul>
           </div>
           <div className="Guest-search"></div>
-          <div className="search-button"> <i>
-          <FontAwesomeIcon icon={faSearch} />
-        </i></div>
+          <div className="search-button">
+            {" "}
+            <i>
+              <FontAwesomeIcon icon={faSearch} />
+            </i>
+          </div>
         </div>
-       
       </nav>
     </React.Fragment>
   );
