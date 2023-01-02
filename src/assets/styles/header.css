@@ -27,8 +27,9 @@ nav {
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     display: flex;
-    place-content: space-evenly;
+    place-content: space-between;
     align-items: center;
+    padding:0px 20px;
 
 }
 
@@ -51,7 +52,6 @@ nav {
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
 }
-
 .search-container {
     width: 297px;
     height: 55px;
@@ -60,4 +60,37 @@ nav {
     background: #FFFFFF;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
+}
+.location-search, .Guest-search{
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding:0px 10px;
+    width:50%;
+ 
+}
+
+.location-list{
+    padding-bottom:3em;
+    
+    position:absolute;
+    top:8em;
+    background-color: #fff;
+    width:100%;
+    margin-left:-100px;
+ 
+}
+.location-display-active{
+    width: 50%;
+    
+}
+.guest-list{
+    position: absolute;
+    top:8em;
+
+}
+.location-list-item{
+    margin-left:6em;
+}
+
+.hidden{
+    display:none;
 }
