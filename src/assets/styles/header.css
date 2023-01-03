@@ -69,7 +69,7 @@ nav {
 }
 
 .location-list{
-    padding-bottom:3em;
+    padding-bottom:5em;
     
     position:absolute;
     top:8em;
@@ -79,7 +79,7 @@ nav {
  
 }
 .location-display-active{
-    width: 50%;
+    /* width: 50%; */
     
 }
 .guest-list{
@@ -93,4 +93,55 @@ nav {
 
 .hidden{
     display:none;
+}
+.sub-title{
+    width: 114px;
+    height: 36px;
+    left: 537px;
+    top: 196px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333333;
+    
+}
+.counter{
+display:flex;
+gap:10px
+}
+li{
+    padding:10px 0px;
+}
+button{
+    width: 23px;
+height: 23px;
+left: 537px;
+top: 244px;
+
+border: 1px solid #828282;
+border-radius: 4px;
+background:transparent;
+}
+.guest-title{
+padding-top:10px;
+}
+.search-button{
+    padding:0px 10px;
+}
+.button-container{
+width: 126px;
+background: rgba(235, 87, 87, 0.9);
+box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+border-radius: 16px;
+color:#F2F2F2;
+display:flex;
+justify-content:center ;
+gap:5px;
+padding: 10px 10px;
+align-items: center;
+}
+.button-container svg>path{
+    fill:#F2F2F2
 }

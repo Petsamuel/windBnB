@@ -53,13 +53,13 @@ function Header() {
             >
               {dropdownlist ? location : location}
             </span>
-            <ul className="location-list ">
+            <ul className={active ? "location-list" :"hidden"}>
               {droplocation.map((index, key) => (
                 <li
                   key={key}
                   className="location-list-item"
                   onClick={() => {
-                    setLocation(index)
+                    setLocation(index);
                   }}
                 >
                   {index}
@@ -69,18 +69,43 @@ function Header() {
           </div>
 
           <div className="Guest-search">
-            Guest
+            Guest <br />
             <span>Add guess</span>
-            <div className="guest-list">
-              <div>Adults</div>
-              <div>Children</div>
+            <div className={active ? "guest-list" : "hidden"}>
+              <div className="guest-list-Wrapper">
+                <div className="guest-title"> Adults</div>
+                <div className="sub-title">Ages 13 or Above</div>
+                <span className="counter">
+                  <div>
+                    <button className="plus">+</button>
+                  </div>
+                  <div>0</div>
+                  <div>
+                    <button className="minu">-</button>
+                  </div>
+                </span>
+              </div>
+              <div className="guest-title">Children</div>
+              <div className="sub-title"> Ages 2-12</div>
+              <span className="counter">
+                <div>
+                  <button className="plus">+</button>
+                </div>
+                <div>0</div>
+                <div>
+                  <button className="minus">-</button>
+                </div>
+              </span>
             </div>
           </div>
           <div className="search-button">
-            {" "}
-            <i>
-              <FontAwesomeIcon icon={faSearch} />
-            </i>
+            {active ? (
+              <div className="button-container">
+                {<FontAwesomeIcon icon={faSearch} />}Search
+              </div>
+            ) : (
+              <div>{<FontAwesomeIcon icon={faSearch} />}</div>
+            )}
           </div>
         </div>
       </nav>
