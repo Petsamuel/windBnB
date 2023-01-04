@@ -2,14 +2,17 @@ import React, { useState } from "react";
 // import {propTypes} from "prop-types"
 
 
-function Counter() {
+function Counter({childToParent}) {
   const [count, setcount] = useState(0);
   
   function Plus(){
     count <5 ? setcount(count+1): "";
+    childToParent(count)
+
   }
   function Minus(){
     count >0 ? setcount(count-1): "";
+    childToParent(count)
   }
   return (
     <span className="counter">

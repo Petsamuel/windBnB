@@ -4,15 +4,13 @@ import "../assets/styles/header.css";
 import locations from "../stays.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import Counter from "./counter"
+import Counter from "./counter";
 
 function Header() {
   const [location, setLocation] = useState([]);
   const [dropdownlist, setdropdownlist] = useState();
   const [active, setactive] = useState(false);
-  const countval = () =>{
-    console.log("new")
-  }
+  const [counts, setcounts]= useState();
 
   const droplocation = [
     "Helsinki, Finland",
@@ -27,12 +25,13 @@ function Header() {
   }, [active]);
   function Location_dropdown() {
     setactive(!active);
-
   }
   function Guest_dropdown() {
-    
     setactive(!active);
   }
+ const childToParent=(countData)=>{
+  setcounts(countData)
+}
 
   return (
     <React.Fragment>
@@ -61,7 +60,7 @@ function Header() {
             >
               {dropdownlist ? location : location}
             </span>
-            <ul className={active ? "location-list" :"hidden"}>
+            <ul className={active ? "location-list" : "hidden"}>
               {droplocation.map((index, key) => (
                 <li
                   key={key}
@@ -70,7 +69,8 @@ function Header() {
                     setLocation(index);
                   }}
                 >
-                  <FontAwesomeIcon icon={faLocationDot}/>{index}
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  {index}
                 </li>
               ))}
             </ul>
@@ -78,19 +78,23 @@ function Header() {
 
           <div className="Guest-search">
             Guest <br />
-            <span  onClick={(e) => {
+            <span
+              onClick={(e) => {
                 Guest_dropdown();
-              }} className="add_guest_wrapper">Add guess</span>
+              }}
+              className="add_guest_wrapper"
+            >
+              {counts ? `${counts +1}  guess`: "add Guess"}
+            </span>
             <div className={active ? "guest-list" : "hidden"}>
               <div className="guest-list-Wrapper">
                 <div className="guest-title"> Adults</div>
                 <div className="sub-title">Ages 13 or Above</div>
-                  <Counter />
+                <Counter childToParent={childToParent}/>
               </div>
               <div className="guest-title">Children</div>
               <div className="sub-title"> Ages 2-12</div>
-              <Counter/>
-
+              <Counter childToParent={childToParent}/>
             </div>
           </div>
           <div className="search-button">
