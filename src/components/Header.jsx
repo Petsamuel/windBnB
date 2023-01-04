@@ -3,12 +3,16 @@ import logo from "../assets/logo.png";
 import "../assets/styles/header.css";
 import locations from "../stays.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Counter from "./counter"
 
 function Header() {
   const [location, setLocation] = useState([]);
   const [dropdownlist, setdropdownlist] = useState();
   const [active, setactive] = useState(false);
+  const countval = () =>{
+    console.log("new")
+  }
 
   const droplocation = [
     "Helsinki, Finland",
@@ -21,8 +25,12 @@ function Header() {
       setLocation(index.city + "," + index.country);
     });
   }, [active]);
-  function dropdownflag() {
-    setdropdownlist("hello");
+  function Location_dropdown() {
+    setactive(!active);
+
+  }
+  function Guest_dropdown() {
+    
     setactive(!active);
   }
 
@@ -45,7 +53,7 @@ function Header() {
           <div className="location-search">
             <span
               onClick={(e) => {
-                dropdownflag();
+                Location_dropdown();
               }}
               className={
                 active ? "location-display-active" : "location-display"
@@ -62,7 +70,7 @@ function Header() {
                     setLocation(index);
                   }}
                 >
-                  {index}
+                  <FontAwesomeIcon icon={faLocationDot}/>{index}
                 </li>
               ))}
             </ul>
@@ -70,32 +78,19 @@ function Header() {
 
           <div className="Guest-search">
             Guest <br />
-            <span>Add guess</span>
+            <span  onClick={(e) => {
+                Guest_dropdown();
+              }} className="add_guest_wrapper">Add guess</span>
             <div className={active ? "guest-list" : "hidden"}>
               <div className="guest-list-Wrapper">
                 <div className="guest-title"> Adults</div>
                 <div className="sub-title">Ages 13 or Above</div>
-                <span className="counter">
-                  <div>
-                    <button className="plus">+</button>
-                  </div>
-                  <div>0</div>
-                  <div>
-                    <button className="minu">-</button>
-                  </div>
-                </span>
+                  <Counter />
               </div>
               <div className="guest-title">Children</div>
               <div className="sub-title"> Ages 2-12</div>
-              <span className="counter">
-                <div>
-                  <button className="plus">+</button>
-                </div>
-                <div>0</div>
-                <div>
-                  <button className="minus">-</button>
-                </div>
-              </span>
+              <Counter/>
+
             </div>
           </div>
           <div className="search-button">

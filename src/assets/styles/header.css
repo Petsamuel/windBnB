@@ -42,6 +42,13 @@ nav {
     color: #000;
     padding: 3px;
 }
+.add_guest_wrapper{
+color: #BDBDBD;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+}
 
 .search-container-active {
     width: 100%;
@@ -95,16 +102,16 @@ nav {
     display:none;
 }
 .sub-title{
-    width: 114px;
+    /* width: 114px; */
     height: 36px;
     left: 537px;
     top: 196px;
-    font-family: 'Muli';
+    font-family: 'Mulish';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
-    color: #333333;
+    color: #BDBDBD;
     
 }
 .counter{
@@ -144,4 +151,20 @@ align-items: center;
 }
 .button-container svg>path{
     fill:#F2F2F2
+}
+.location-list-item svg>path{
+    fill: #4F4F4F;
+    
+}
+.location-list-item svg{
+    padding:0px 5px;
+}
+button:hover{
+    cursor:pointer;
+}
+.button-container{
+    cursor: pointer;
+}
+.card-img{
+    cursor:pointer;
 }

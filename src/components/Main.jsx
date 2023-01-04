@@ -14,7 +14,7 @@ function Main() {
                 12+stays
               </div>
               </div>
-                <Card/>
+                <Card />
             </div>
         </div>
 
