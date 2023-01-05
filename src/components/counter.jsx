@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import {propTypes} from "prop-types"
+
 
 
 function Counter({childToParent}) {
@@ -37,8 +37,6 @@ function Counter({childToParent}) {
   );
 }
 
-// Counter.propTypes={
-// countval : propTypes.number,
-// }
+
 
 export default Counter;
