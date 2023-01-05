@@ -1,22 +1,29 @@
-.header-component{
+.header-component {
     position: fixed;
-    top:0px;
-    background-color:#fff;
-    width:100%;
-    margin-bottom: 4em;;
+    top: 0px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 4em;
+    ;
 }
-.main-component{
-    margin-top:12em;
+
+.main-component {
+    margin-top: 12em;
+}
+
+.main-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav {
-  
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #000;
-
-    padding:4em;
+    padding: 4em;
+    place-content: flex-end;
 }
 
 
@@ -29,7 +36,7 @@ nav {
     display: flex;
     place-content: space-between;
     align-items: center;
-    padding:0px 20px;
+    padding: 0px 20px;
 
 }
 
@@ -42,12 +49,13 @@ nav {
     color: #000;
     padding: 3px;
 }
-.add_guest_wrapper{
-color: #BDBDBD;
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 18px;
+
+.add_guest_wrapper {
+    color: #BDBDBD;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .search-container-active {
@@ -58,10 +66,11 @@ line-height: 18px;
     background: #FFFFFF;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    display:flex;
+    display: flex;
 }
+
 .search-container {
-    display:flex;
+    display: flex;
     width: 297px;
     height: 55px;
     left: 1047px;
@@ -70,39 +79,45 @@ line-height: 18px;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
 }
-.location-search, .Guest-search{
+
+.location-search,
+.Guest-search {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
-    padding:0px 10px;
-    width:50%;
- 
+    padding: 0px 10px;
+    width: 50%;
+
 }
 
-.location-list{
-    padding-bottom:5em;
-    position:absolute;
-    top:8em;
-    background-color: #fff;
-    width:100%;
-    margin-left:-100px;
- 
-}
-.location-display-active{
-    /* width: 50%; */
-    
-}
-.guest-list{
+.location-list {
+    padding-bottom: 5em;
     position: absolute;
-    top:8em;
+    top: 8em;
+    background-color: #fff;
+    width: 100%;
+    margin-left: -100px;
 
 }
-.location-list-item{
-    margin-left:6em;
+
+.location-display-active {
+    /* width: 50%; */
+
 }
 
-.hidden{
-    display:none;
+.guest-list {
+    position: absolute;
+    top: 8em;
+
 }
-.sub-title{
+
+.location-list-item {
+    margin-left: 6em;
+}
+
+.hidden {
+    display: none;
+}
+
+.sub-title {
     /* width: 114px; */
     height: 36px;
     left: 537px;
@@ -113,59 +128,78 @@ line-height: 18px;
     font-size: 14px;
     line-height: 18px;
     color: #BDBDBD;
-    
-}
-.counter{
-display:flex;
-gap:10px
-}
-li{
-    padding:10px 0px;
-}
-button{
-    width: 23px;
-height: 23px;
-left: 537px;
-top: 244px;
 
-border: 1px solid #828282;
-border-radius: 4px;
-background:transparent;
 }
-.guest-title{
-padding-top:10px;
+
+.counter {
+    display: flex;
+    gap: 10px
 }
-.search-button{
-    padding:0px 10px;
+
+li {
+    padding: 10px 0px;
 }
-.button-container{
-width: 126px;
-background: rgba(235, 87, 87, 0.9);
-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-border-radius: 16px;
-color:#F2F2F2;
-display:flex;
-justify-content:center ;
-gap:5px;
-padding: 10px 10px;
-align-items: center;
+
+button {
+    width: 23px;
+    height: 23px;
+    left: 537px;
+    top: 244px;
+
+    border: 1px solid #828282;
+    border-radius: 4px;
+    background: transparent;
 }
-.button-container svg>path{
-    fill:#F2F2F2
+
+.guest-title {
+    padding-top: 10px;
 }
-.location-list-item svg>path{
+
+.search-button {
+    padding: 0px 10px;
+}
+
+.button-container {
+    width: 126px;
+    background: rgba(235, 87, 87, 0.9);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 10px;
+    align-items: center;
+}
+
+.button-container svg>path {
+    fill: #F2F2F2
+}
+
+.location-list-item svg>path {
     fill: #4F4F4F;
-    
+
 }
-.location-list-item svg{
-    padding:0px 5px;
+
+.location-list-item svg {
+    padding: 0px 5px;
 }
-button:hover{
-    cursor:pointer;
-}
-.button-container{
+
+button:hover {
     cursor: pointer;
 }
-.card-img{
-    cursor:pointer;
+
+.button-container {
+    cursor: pointer;
+}
+
+.card-img {
+    cursor: pointer;
+}
+
+.brand-container {
+    display: flex;
+    position: absolute;
+    top: 3em;
+    left: 5em;
 }

@@ -1,18 +1,13 @@
 /* mobile  */
 @media screen and (max-width:46.5em) {
-    nav{
-        flex-direction: column;
-    }
     .card-container{
         display: grid;
         grid-template-columns: repeat(1, auto);
         gap:2em
         }
         .search-container-active, .search-container, .input-group{
-            flex-direction:column;
             width: 100%;
             height:fit-content;
-
         }
         .location-search, .Guest-search{
             border: none;
@@ -21,11 +16,23 @@
             
         }
         .location-search{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
         }
-        .location-list, .guest-list{
-            top:20em;
+        /* .location-list, .guest-list{
+            position:relative;
+            top:0em;
+        } */
+        .location-list{
+            padding-top:3em;
+            display:hidden;
+        }
+        .brand-container{
+            position: relative;
+            top: 1em;
+            left: 1em;
+        }
+        .search-container-active{
+            flex-direction:column;
         }
 }
 /* tablets */

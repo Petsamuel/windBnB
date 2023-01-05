@@ -8,7 +8,7 @@ import Counter from "./counter";
 
 function Header() {
   const [location, setLocation] = useState([]);
-  const [dropdownlist, setdropdownlist] = useState();
+  const [dropdownlist, setdropdownlist] = useState(false);
   const [active, setactive] = useState(false);
   const [counts, setcounts]= useState();
 
@@ -35,13 +35,13 @@ function Header() {
 
   return (
     <React.Fragment>
-      <nav>
-        <div className={active ? "hidden" : "brand-container"}>
+     
+       <div className={active ? "hidden" : "brand-container"}>
           <div className="brand-logo">
             <img src={logo} alt="windBnb-logo" />
           </div>
         </div>
-
+      <nav>
         <div
           className={
             active
@@ -84,11 +84,11 @@ function Header() {
               }}
               className="add_guest_wrapper"
             >
-              {counts ? `${counts +1}  guess`: "add Guess"}
+              {counts ? `${counts}  guess`: "add Guess"}
             </span>
             <div className={active ? "guest-list" : "hidden"}>
               <div className="guest-list-Wrapper">
-                <div className="guest-title"> Adults</div>
+                <div className="guest-title">Adults</div>
                 <div className="sub-title">Ages 13 or Above</div>
                 <Counter childToParent={childToParent}/>
               </div>
@@ -108,6 +108,7 @@ function Header() {
           </div>
         </div>
       </nav>
+     
     </React.Fragment>
   );
 }

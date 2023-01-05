@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Card from "./card";
 
 function Main() {
-    const [stays, setStays] = useState()
+    const [stays, setStays] = useState();
     return (
         <React.Fragment>
         
