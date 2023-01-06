@@ -10,7 +10,7 @@ function Header() {
   const [location, setLocation] = useState([]);
   const [dropdownlist, setdropdownlist] = useState(false);
   const [active, setactive] = useState(false);
-  const [counts, setcounts]= useState();
+  const [counts, setcounts] = useState();
 
   const droplocation = [
     "Helsinki, Finland",
@@ -29,14 +29,13 @@ function Header() {
   function Guest_dropdown() {
     setactive(!active);
   }
- const childToParent=(countData)=>{
-  setcounts(countData)
-}
+  const childToParent = (countData) => {
+    setcounts(countData);
+  };
 
   return (
     <React.Fragment>
-     
-       <div className={active ? "hidden" : "brand-container"}>
+      {/* <div className={active ? "hidden" : "brand-container"}>
           <div className="brand-logo">
             <img src={logo} alt="windBnb-logo" />
           </div>
@@ -107,8 +106,72 @@ function Header() {
             )}
           </div>
         </div>
-      </nav>
-     
+      </nav> */}
+      <div className="headerWrapper">
+        <div>
+          <nav>
+            <div className={active ? "hidden" : "brand-container"}>
+              <img src={logo} alt="windBnb-logo" />
+            </div>
+            <div
+              className={
+                active ? "search-container-active" : "search-container"
+              }
+            >
+              <div
+                className={active ? " location-search location-search-active": "location-search"}
+                onClick={(e) => {
+                  Location_dropdown();
+                }}
+              >
+                {location}
+              </div>
+              <div className={active? "Guest-search Guest-search-active": "Guest-search"}>Guests</div>
+              <div className="sub-menu-wrapper">
+                <div>
+                <ul className={active ? "location-list" : "hidden"}>
+              {droplocation.map((index, key) => (
+                <li
+                  key={key}
+                  className="location-list-item"
+                  onClick={() => {
+                    setLocation(index);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  {index}
+                </li>
+              ))}
+            </ul>
+                </div >
+                <div className={active? "hidden": "hidden"}>
+                <div className="guest-list-Wrapper">
+                <div className="guest-title">Adults</div>
+                <div className="sub-title">Ages 13 or Above</div>
+                <Counter childToParent={childToParent}/>
+              </div>
+              <div>
+              <div className="guest-title">Children</div>
+              <div className="sub-title"> Ages 2-12</div>
+              <Counter childToParent={childToParent}/>
+              </div>
+                </div>
+                  
+              </div>
+              <div className="search-button">
+                {active ? (
+                  <div className="button-container">
+                    {<FontAwesomeIcon icon={faSearch} />}Search
+                  </div>
+                ) : (
+                  <div>{<FontAwesomeIcon icon={faSearch} />}</div>
+                )}
+              </div>
+            </div>
+          </nav>
+
+        </div>
+      </div>
     </React.Fragment>
   );
 }
