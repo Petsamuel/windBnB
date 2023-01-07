@@ -6,34 +6,7 @@
         grid-template-columns: repeat(1, auto);
         gap:2em
         }
-        .search-container-active, .search-container, .input-group{
-            width: 100%;
-            background-color: none;
-            box-shadow: none;
-            padding-top:30px;
-        }
-        .location-search, .Guest-search{
-            width:100%;
-            padding:20px 20px;
-            background-color: #fff;
-            border: 1px solid 1px solid rgba(0, 0, 0, 0.1);
-           
-            box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-           
-            
-        }
-     
       
-      
-        .location-list{
-            padding-top:3em;
-            display:hidden;
-        }
-        .brand-container{
-            position: relative;
-            top: 1em;
-            left: 1em;
-        }
        
         /* mobile-first approach */
         .headerWrapper{
@@ -41,6 +14,26 @@
         }
         nav{
             display:block;
+            padding:2em 0em;
+        }
+        .location-search, .Guest-search{
+            width:80%;
+            padding:20px 20px;
+            background-color: #fff;
+            border: 1px solid 1px solid rgba(0, 0, 0, 0.1);
+           
+            box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+        }
+        .search-container-active, .search-container{
+            background-color: none;
+            box-shadow: none;
+            padding-top:30px;
+        }
+       
+        .brand-container{
+            position: relative;
+            top: 1em;
+            left: 1em;
         }
         .search-container-active{
             flex-direction:column;
@@ -59,8 +52,19 @@
         .sub-menu-wrapper{
             display:block;
             position:relative;
-            top:0em;
+            top:0.1em;
             background-color: #fff;
+            width: 90%;
+        }
+         
+        .location-list{
+            padding-top:3em;
+            display:hidden;
+            width:max-content;
+        }
+        .guest-list-Wrapper {
+            width:max-content;
+        
         }
 }
 /* tablets */
@@ -69,5 +73,13 @@
         display: grid;
         grid-template-columns: repeat(2, auto);
         gap:2em
+        }
+        .sub-menu-wrapper{
+            grid-template-columns: repeat(3, auto);
+            gap:0;
+        }
+        .guest-main-container{
+            grid-column: 2;
+            
         }
 }

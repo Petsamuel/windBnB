@@ -20,7 +20,7 @@ function Header() {
   ];
   useEffect(() => {
     locations.map((index) => {
-      setLocation(index.city + "," + index.country);
+      setLocation(index.city + ", " + index.country);
     });
   }, [active]);
   function Location_dropdown() {
@@ -35,78 +35,6 @@ function Header() {
 
   return (
     <React.Fragment>
-      {/* <div className={active ? "hidden" : "brand-container"}>
-          <div className="brand-logo">
-            <img src={logo} alt="windBnb-logo" />
-          </div>
-        </div>
-      <nav>
-        <div
-          className={
-            active
-              ? "search-container-active input-group"
-              : "search-container input-group"
-          }
-        >
-          <div className="location-search">
-            <span
-              onClick={(e) => {
-                Location_dropdown();
-              }}
-              className={
-                active ? "location-display-active" : "location-display"
-              }
-            >
-              {dropdownlist ? location : location}
-            </span>
-            <ul className={active ? "location-list" : "hidden"}>
-              {droplocation.map((index, key) => (
-                <li
-                  key={key}
-                  className="location-list-item"
-                  onClick={() => {
-                    setLocation(index);
-                  }}
-                >
-                  <FontAwesomeIcon icon={faLocationDot} />
-                  {index}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="Guest-search">
-            Guest <br />
-            <span
-              onClick={(e) => {
-                Guest_dropdown();
-              }}
-              className="add_guest_wrapper"
-            >
-              {counts ? `${counts}  guess`: "add Guess"}
-            </span>
-            <div className={active ? "guest-list" : "hidden"}>
-              <div className="guest-list-Wrapper">
-                <div className="guest-title">Adults</div>
-                <div className="sub-title">Ages 13 or Above</div>
-                <Counter childToParent={childToParent}/>
-              </div>
-              <div className="guest-title">Children</div>
-              <div className="sub-title"> Ages 2-12</div>
-              <Counter childToParent={childToParent}/>
-            </div>
-          </div>
-          <div className="search-button">
-            {active ? (
-              <div className="button-container">
-                {<FontAwesomeIcon icon={faSearch} />}Search
-              </div>
-            ) : (
-              <div>{<FontAwesomeIcon icon={faSearch} />}</div>
-            )}
-          </div>
-        </div>
-      </nav> */}
       <div className="headerWrapper">
         <div>
           <nav>
@@ -128,7 +56,7 @@ function Header() {
               </div>
               <div className={active? "Guest-search Guest-search-active": "Guest-search"}>Guests</div>
               <div className="sub-menu-wrapper">
-                <div>
+                {/* <div> */}
                 <ul className={active ? "location-list" : "hidden"}>
               {droplocation.map((index, key) => (
                 <li
@@ -143,18 +71,18 @@ function Header() {
                 </li>
               ))}
             </ul>
-                </div >
-                <div className={active? "hidden": "hidden"}>
+              
+                <div className={active? "guest-main-container": "hidden"}>
                 <div className="guest-list-Wrapper">
                 <div className="guest-title">Adults</div>
                 <div className="sub-title">Ages 13 or Above</div>
                 <Counter childToParent={childToParent}/>
               </div>
-              <div>
+              
               <div className="guest-title">Children</div>
               <div className="sub-title"> Ages 2-12</div>
               <Counter childToParent={childToParent}/>
-              </div>
+             
                 </div>
                   
               </div>
