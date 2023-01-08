@@ -9,6 +9,7 @@ import Counter from "./counter";
 function Header() {
   const [location, setLocation] = useState([]);
   const [dropdownlist, setdropdownlist] = useState(false);
+  const [guestlist, setguestlist] = useState(false);
   const [active, setactive] = useState(false);
   const [counts, setcounts] = useState();
 
@@ -24,10 +25,21 @@ function Header() {
     });
   }, [active]);
   function Location_dropdown() {
-    setactive(!active);
+    if (active != true) {
+      setactive(!active);
+    } else {
+      setdropdownlist(!dropdownlist);
+      setguestlist(false);
+    }
   }
   function Guest_dropdown() {
-    setactive(!active);
+    if (active != true) {
+      console.log("test");
+      setactive(!active);
+    } else {
+      setguestlist(!guestlist);
+      setdropdownlist(false);
+    }
   }
   const childToParent = (countData) => {
     setcounts(countData);
@@ -35,70 +47,50 @@ function Header() {
 
   return (
     <React.Fragment>
-      <div className="headerWrapper">
-        <div>
-          <nav>
-            <div className={active ? "hidden" : "brand-container"}>
-              <img src={logo} alt="windBnb-logo" />
-            </div>
-            <div
-              className={
-                active ? "search-container-active" : "search-container"
-              }
-            >
-              <div
-                className={active ? " location-search location-search-active": "location-search"}
-                onClick={(e) => {
-                  Location_dropdown();
-                }}
-              >
-                {location}
-              </div>
-              <div className={active? "Guest-search Guest-search-active": "Guest-search"}>Guests</div>
-              <div className="sub-menu-wrapper">
-                {/* <div> */}
-                <ul className={active ? "location-list" : "hidden"}>
-              {droplocation.map((index, key) => (
-                <li
-                  key={key}
-                  className="location-list-item"
-                  onClick={() => {
-                    setLocation(index);
-                  }}
-                >
-                  <FontAwesomeIcon icon={faLocationDot} />
-                  {index}
-                </li>
-              ))}
-            </ul>
-              
-                <div className={active? "guest-main-container": "hidden"}>
-                <div className="guest-list-Wrapper">
-                <div className="guest-title">Adults</div>
-                <div className="sub-title">Ages 13 or Above</div>
-                <Counter childToParent={childToParent}/>
-              </div>
-              
-              <div className="guest-title">Children</div>
-              <div className="sub-title"> Ages 2-12</div>
-              <Counter childToParent={childToParent}/>
-             
+      <div className="header-container">
+        <nav>
+          <div className="navbrand">
+          {active ? (
+                <div className="nav-header-info">
+                  <div className="info">Edit your search</div>
+                  <div className="close">X</div>{" "}
                 </div>
-                  
-              </div>
-              <div className="search-button">
-                {active ? (
-                  <div className="button-container">
+              ) : (
+                <img src={logo} alt="windBnb-logo" />
+              )}
+          </div>
+          <div className="search-menu">
+            <div className="col" >
+              {location}
+            </div>
+            <div className="col2">Guest</div>
+            <div className="dropdown">
+            <ul className={dropdownlist ? "location-list" : "hidden"}>
+                  {droplocation.map((index, key) => (
+                    <li
+                      key={key}
+                      className="location-list-item"
+                      onClick={() => {
+                        setLocation(index);
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faLocationDot} />
+                      {index}
+                    </li>
+                  ))}
+                </ul>
+            </div>
+            <div className="col3">
+            {active ? (
+                  <div className="button-container" onClick={()=>{setactive(!active)}}>
                     {<FontAwesomeIcon icon={faSearch} />}Search
                   </div>
                 ) : (
                   <div>{<FontAwesomeIcon icon={faSearch} />}</div>
                 )}
-              </div>
             </div>
-          </nav>
-
-        </div>
+          </div>
+        </nav>
       </div>
     </React.Fragment>
   );
