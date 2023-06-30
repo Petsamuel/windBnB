@@ -1,24 +1,13 @@
-import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import "./App.css";
-import "./mediaquery.css";
+import { Fragment } from "react";
+import { Header } from "./components/Header";
 
-function App() {
+export const App = () => {
   return (
-    <React.Fragment>
-      <div className="App-wrapper">
-        <div className="header-component">
-          <Header />
-        </div>
-        <section role="main" className="main-component">
-        <Main />
-        </section>
-        <Footer />
-      </div>
-    </React.Fragment>
-  );
-}
+    <Fragment>
+      <Header />
+      <section className="mx-4">
 
-export default App;
+      </section>
+    </Fragment>
+  )
+}
