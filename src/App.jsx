@@ -1,13 +1,14 @@
 import { Fragment } from "react";
-import { Header } from "./components/Header";
+import { Layout } from "./components/Layout";
+import { Home } from "./components/page/Home";
 
 export const App = () => {
   return (
     <Fragment>
-      <Header />
-      <section className="mx-4">
+      <Layout>
+        <Home />
+      </Layout>
 
-      </section>
     </Fragment>
   )
 }
