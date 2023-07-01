@@ -3,21 +3,16 @@ import { Fragment } from 'react';
 export const Search = () => {
     return (
         <Fragment>
-            <div className='bg-white shadow-md  my-5  rounded-3xl'>
-                <div className='flex justify-around gap-4 py-5 items-center px-5'>
-                    <div className='flex gap-4 items-center'>
-                        <div className='cursor-pointer '>Location</div>
-                        {/* <div className="w-[1px] h-8 bg-gray-500"></div> */}
-                    </div>
-                    <div className={"flex gap-4 items-center  border-r-gray-500 border border-l-2"}>
-                        <div classname=" cursor-pointer text-gray-200 ">Add Guests</div>
-                        {/* <div className="w-[1px] h-8 bg-gray-500"></div> */}
-                    </div>
+            <div className='bg-white  my-5  rounded-3xl'>
+                <div className='flex justify-around gap-4  items-center px-5'>
+                    <ul className='flex gap-4 shadow-md px-5 align-start items-center rounded-xl'>
+                        <li className=''><a href="#" className='cursor-pointer '>Location</a></li>
+                        <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
+                        <li><a href="#" className='cursor-pointer '>Add Guests</a></li>
+                        <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
+                        <li><a href="#" className='cursor-pointer '>Search</a></li>
 
-                    <div>
-                        <div className='cursor-pointer items-center'>Search</div>
-                        <div className=""></div>
-                    </div>
+                    </ul>
                 </div>
 
             </div>
