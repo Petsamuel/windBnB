@@ -8,6 +8,7 @@ import { Button, ButtonCounter } from './Buttons';
 export const Search = () => {
     const [searchState, setSearchState] = useGlobalState("searchActive")
     const [ActiveLocation] = useGlobalState("locationLists");
+    const [total] = useGlobalState("total")
     const [location, setlocation] = useState()
     const locationState = () => {
         setSearchState({ ...searchState, searchActive: !searchState.searchActive })
@@ -24,7 +25,7 @@ export const Search = () => {
                         <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
                         <li className={searchState.searchActive ? 'flex flex-col w-[25em] p-2' : 'flex flex-col'} ><a href="#" className='cursor-pointer '>
                             <div className={searchState.searchActive ? ' text-md' : 'hidden'}>Guess </div>
-                            Add Guests</a></li>
+                            {total != 0 ? total : "Add"} Guests</a></li>
                         <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
                         <li className={searchState.searchActive ? 'flex flex-col w-[25em] p-2' : 'flex flex-col'}><a className='cursor-pointer flex items-center justify-center'>{searchState.searchActive ? <Button /> : <FontAwesomeIcon icon={faMagnifyingGlass} />} </a></li>
 
@@ -35,9 +36,8 @@ export const Search = () => {
                                 <li key={index} className="cursor-pointer flex gap-4 items-center my-4" onClick={() => { setlocation(value.name) }}><FontAwesomeIcon icon={faLocationDot} />{value.name}</li>
                             ))}
                         </ul>
-                        <div className='mt-10'>
-                            {searchState.searchActive ?
-                                <ButtonCounter /> : ""}
+                        <div className={searchState.searchActive ? 'mt-10' : 'hidden'}>
+                            <ButtonCounter />
                         </div>
                         <div></div>
                     </div>
