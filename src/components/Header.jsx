@@ -6,9 +6,6 @@ import { useGlobalState } from "../hooks"
 
 export const Header = () => {
     const [SearchState] = useGlobalState("searchActive");
-    
-
-
 
     return (
         <Fragment>

@@ -3,7 +3,8 @@ import data from "./stays.json";
 
 export const { useGlobalState, setGlobalState, getGlobalState } = createGlobalState({
     data: data,
-    counter: 0,
+    adultCount: 0,
+    childrenCount: 0,
     active: false,
     searchActive: false,
     locationLists: [
