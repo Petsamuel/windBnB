@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 import { Header } from './Header'
 
-export const Layout = ({ Children }) => {
+export const Layout = ({ children }) => {
     return (
         <Fragment>
             <Header />
-            {Children}
+            {children}
         </Fragment>
 
     )

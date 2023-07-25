@@ -34,3 +34,7 @@
 button .fa-magnifying-glass > path {
   color: white;
 }
+
+.fa-star > path {
+  color: #f87171;
+}

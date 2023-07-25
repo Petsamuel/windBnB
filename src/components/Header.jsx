@@ -7,9 +7,11 @@ import { useGlobalState } from "../hooks"
 export const Header = () => {
     const [SearchState] = useGlobalState("searchActive");
 
+
+
     return (
         <Fragment>
-            <section className="mt-6 bg-white ">
+            <section className="mt-6 bg-white fixed -top-8 z-50 w-full">
                 <nav className="flex items-center justify-between mx-10 ">
                     <div className={SearchState.searchActive ? "hidden" : ""}>
                         <svg width="96" height="19" viewBox="0 0 96 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,6 +23,9 @@ export const Header = () => {
                         <Search />
                     </div>
                 </nav>
+                {SearchState.searchActive ? <div className="overflow bg-black h-screen w-full absolute opacity-60 overflow-hidden">
+
+                </div> : ""}
             </section>
         </Fragment>
     )
