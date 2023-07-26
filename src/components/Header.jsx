@@ -7,6 +7,7 @@ import { useGlobalState } from "../hooks"
 export const Header = () => {
     const [SearchState] = useGlobalState("searchActive");
 
+
     return (
         <Fragment>
             <section className="mt-6 bg-white fixed -top-8 z-50 w-full">
@@ -17,7 +18,7 @@ export const Header = () => {
                             <path d="M8.22724 4.5C9.38194 2.5 12.2687 2.5 13.4234 4.5L19.0526 14.25C20.2073 16.25 18.7639 18.75 16.4545 18.75H5.19615C2.88675 18.75 1.44338 16.25 2.59808 14.25L8.22724 4.5Z" fill="#EB5757" />
                         </svg>
                     </div>
-                    <div className={SearchState.searchActive ? 'w-full' : ""}>
+                    <div className={SearchState.searchActive ? 'lg:w-full' : ""}>
                         <Search />
                     </div>
                 </nav>

@@ -8,6 +8,7 @@ export const { useGlobalState, setGlobalState, getGlobalState } = createGlobalSt
     active: false,
     searchActive: false,
     total: 0,
+    search:"",
     locationLists: [
         { name: "Helsinki, Finland" },
         { name: "Turku, Finland" },

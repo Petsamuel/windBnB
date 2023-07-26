@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { useGlobalState } from "../../hooks";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Home = () => {
     const [data] = useGlobalState("data")
+    const [filter, setFilter] = useGlobalState("search")
+    console.log(filter)
+
     return (
         <Fragment>
             <section className="relative my-[20vh]">
