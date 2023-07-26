@@ -29,30 +29,30 @@ export const Search = () => {
 
     return (
         <Fragment>
-            <div className={'bg-white  my-5  '}>
+            <div className={'bg-white  my-5'}>
                 <div className=''>
-                    <ul className={searchState ? 'w-full flex gap-4 shadow-md  align-start items-center rounded-xl' : "flex gap-4 shadow-md px-5  items-center rounded-xl"}>
+                    <ul className={searchState ? 'w-full flex flex-col lg:flex-row gap-4 shadow-md  align-start items-center rounded-xl' : "flex gap-4 shadow-md px-5  items-center rounded-xl"}>
                         <li className={searchState ? 'flex flex-col w-[25em] p-2' : 'flex flex-col'} >
                             <a href="#" className={searchState && hover === "location" ? 'cursor-pointer border-[1px] rounded-xl border-gray-700 p-2' : "cursor-pointer p-2"} onClick={() => { Switcher('location'); }}>
                                 <div className={searchState ? ' text-md' : 'hidden'}>Location </div>
-                                { location}</a></li>
-                        <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
+                                {location}</a></li>
+                        <li className='w-[1px] h-8 bg-gray-300 py-7 '></li>
                         <li className={searchState ? 'flex flex-col w-[25em] p-2' : 'flex flex-col'}>
                             <a href="#" className={searchState && hover === "guest" ? 'cursor-pointer border-[1px] rounded-xl border-gray-700 p-2' : "cursor-pointer p-2"} onClick={() => { Switcher('guest'); }}>
                                 <div className={searchState ? ' text-md' : 'hidden'}>Guess </div>
                                 {total != 0 ? total : "Add"} Guests</a></li>
-                        <li className='w-[1px] h-8 bg-gray-300 py-7'></li>
+                        <li className='w-[1px] h-8 bg-gray-300 py-7 '></li>
                         <li className={searchState ? 'flex flex-col w-[25em] p-2' : 'flex flex-col'}><a className='cursor-pointer flex items-center justify-center'>{searchState ? <Button /> : <FontAwesomeIcon icon={faMagnifyingGlass} />} </a></li>
 
                     </ul>
-                    <div className='flex justify-between  items-start  mx-4 align-middle relative w-[58%]'>
-                        <ul className={searchState ? 'hidden  mt-10 lg:flex flex-col items-start ' : "hidden"}>
+                    <div className='flex flex-col lg:flex-row justify-between  items-start  mx-4 align-middle relative w-[58%]'>
+                        <ul className={searchState ? '  mt-10 lg:flex flex-col items-start ' : "hidden"}>
 
                             {menuSwitch ? ActiveLocation.map((value, index) => (
                                 <li key={index} className="cursor-pointer flex gap-4 items-center my-4 align-middle" onClick={() => { setlocation(value.name) }}><FontAwesomeIcon icon={faLocationDot} />{value.name}</li>
                             )) : ""}
                         </ul>
-                        <div className={searchState && hover === "guest" ? 'mt-10  w-80 lg:flex items-start hidden' : 'hidden'} >
+                        <div className={searchState && hover === "guest" ? 'mt-10  w-80 lg:flex items-start ' : 'hidden'} >
                             <ButtonCounter />
                         </div>
 

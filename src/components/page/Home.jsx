@@ -8,7 +8,7 @@ export const Home = () => {
     const [data] = useGlobalState("data")
     return (
         <Fragment>
-            <section className="relative">
+            <section className="relative my-[20vh]">
                 <div className="pb-6 mx-12 mt-6 flex justify-between ">
                     <h1>Stays in Finland</h1>
                     <div>12+ stays   </div>
@@ -19,7 +19,7 @@ export const Home = () => {
                         {
                             data.map((val, key) => (
                                 <div key={key}>
-                                    <img src={val.photo} className="rounded-xl w-full flex h-[300px]" alt={`stay-image ${key}`} />
+                                    <img src={val.photo} className="rounded-xl lg:w-full flex lg:h-[300px]" alt={`stay-image ${key}`} />
                                     <div className="flex flex-col py-3 ">
                                         <div className="flex justify-between text-gray-400">
                                             <div className={val.superHost ? "flex gap-4 justify-start items-start" : ""}>
